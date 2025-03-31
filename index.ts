@@ -19,6 +19,6 @@ app.use(cors({ credentials: true, origin: "https://khalil-webdev.de" }));
 app.use("/feedback",feedbackRouter)
 app.use("/contact",contactRouter)
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5200;
 
 app.listen(PORT, () => console.log(`Server is running an PORT ${PORT}`));
