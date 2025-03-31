@@ -1,0 +1,24 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const mongoose_1 = __importDefault(require("mongoose"));
+const feedbackSchema = new mongoose_1.default.Schema({
+    name: { type: String, required: true },
+    testimonial: { type: String, required: true },
+    designation: { type: String },
+    company: { type: String },
+    image: {
+        type: String,
+        default: "data:image/jpeg;base64,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",
+    },
+    ipAddress: {
+        type: String,
+    },
+    visitorId: {
+        type: String,
+    },
+}, { timestamps: true });
+exports.default = mongoose_1.default.model("FeedbackSchema", feedbackSchema);
+//# sourceMappingURL=feedbackSchema.js.map
