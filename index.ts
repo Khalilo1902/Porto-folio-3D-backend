@@ -14,7 +14,10 @@ app.use(express.json());
 //app.use(cors({    origin: 'http://localhost:3000',  credentials: true  }));
 app.use(cors({ credentials: true, origin: "https://khalil-webdev.de" }));
 
-
+// Route für die Root-URL
+app.get('/', (req, res) => {
+    res.send('Hello World');
+  });
 
 app.use("/feedback",feedbackRouter)
 app.use("/contact",contactRouter)
