@@ -32,6 +32,8 @@ try {
 const getAllFeedback = asyncHandler(async(req:Request,res:Response)=>{
    try {
     const feedback = await feedbackSchema.find()
+    console.log('Feedback retrieved:', feedback);
+
     res.json(feedback)
    } catch (error) {
     throw new Error(" fails get feedback")
