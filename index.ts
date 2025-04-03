@@ -12,8 +12,12 @@ const app = express();
 
 app.use(express.json()); 
 //app.use(cors({    origin: 'http://localhost:3000',  credentials: true  }));
- app.use(cors({ credentials: true, origin: "https://khalil-webdev.de" }));
-
+app.use(cors({
+    origin: "https://khalil-webdev.de",
+    credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+}));
 ;
 
 app.use("/feedback",feedbackRouter)
