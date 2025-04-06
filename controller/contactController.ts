@@ -55,3 +55,13 @@ export const postContact = asyncHandler(async (req: Request, res: Response) => {
       res.status(500).send('Error sending message');  
     }
 });
+
+
+export const getAllContact = asyncHandler(async(req,res)=>{
+ try {
+  const getContact = await contactSchema.find()
+  res.status(201).json(getContact)
+ } catch (error) {
+  res.status(500).send("error bei contact zu bringen ")
+ }
+})
