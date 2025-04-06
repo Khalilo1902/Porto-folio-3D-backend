@@ -37,7 +37,13 @@ export const postContact = asyncHandler(async (req: Request, res: Response) => {
           </div>
         `,  
       };
-
+      transporter.verify((err, success) => {
+        if (err) {
+          console.error("SMTP Error:", err);
+        } else {
+          console.log("✅ SMTP is ready");
+        }
+      });
       
       await transporter.sendMail(mailOptions);
       res.status(200).send('Message sent successfully'); 
