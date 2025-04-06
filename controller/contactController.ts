@@ -44,8 +44,11 @@ export const postContact = asyncHandler(async (req: Request, res: Response) => {
           console.log("✅ SMTP is ready");
         }
       });
-      
+      console.log("Sende Mail...");
       await transporter.sendMail(mailOptions);
+      
+      console.log("Mail gesendet!");
+
       res.status(200).send('Message sent successfully'); 
     } catch (error) {
       console.error('Error sending email:', error);  
